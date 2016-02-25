@@ -4,7 +4,7 @@
 
 1. Create an account at <https://trombone.io>
 2. From the UI, create an app. You'll get an `AppId` and `AppSecret` (in Settings)
-3. Run `meteor add trombone:trombone` from your Meteor app folder
+3. Run `meteor add trombonehq:trombone` from your Meteor app folder
 4. Come up with password to be used to login to your application, you will use this at trombone.io and in the next step. This password will ensure your account is secure and cannot even be accessed by trombone.io admins. Please keep this secure and do not share this with anyone.
 5. Configure your Meteor app with the `AppId`, `AppSecret` and `Password`. by adding the following code to a `server/trombone.js` file:
 
