@@ -1,8 +1,7 @@
 Trombone = {
   configure: function(appId, appSecret, password) {
 
-    //var apiURl = 'http://localhost:3000';
-    var apiURl = 'https://trombone.io';
+    var apiURl = Meteor.settings.tromboneAPIUrl ? Meteor.settings.tromboneAPIUrl : 'https://trombone.io';
 
     var result = {};
 
