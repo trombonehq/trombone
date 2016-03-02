@@ -34,7 +34,9 @@ Trombone = {
         Meteor.setTimeout(waitForConnection, 100)
       } else {
         result.connected = connection.status().connected;
-        if(connection.call('authenticateCredentials', appId, appSecret)) {
+        var absoluteUrl = Meteor.absoluteUrl({secure: true});
+
+        if(connection.call('authenticateCredentials', appId, appSecret, absoluteUrl)) {
           console.log('Trombone: Connected to Trombone api');
           setupAccount(appSecret, password);
           result.authenticated = true;
