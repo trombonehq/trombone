@@ -36,16 +36,14 @@ Trombone = {
         result.connected = connection.status().connected;
         var absoluteUrl = Meteor.absoluteUrl({secure: true});
 
-        if(connection.call('authenticateCredentials', appId, appSecret, absoluteUrl)) {
-          console.log('Trombone: Connected to Trombone api');
-          setupAccount(appSecret, password);
-          result.authenticated = true;
-          return result;
-        } else {
-          console.log('Trombone: Your App Id & App Secret combination was not recognised');
-          result.authenticated = false;
-          return result;
-        };
+        connection.call('authenticateCredentials', appId, appSecret, absoluteUrl, function(error, result) {
+          if(error) {
+            console.log('Trombone Error: ' + error.message);
+          } else {
+            console.log('Trombone: Connected to Trombone');
+            setupAccount(appSecret, password);
+          }
+        });
 
       }
     }
