@@ -16,6 +16,7 @@ Package.onUse(function(api) {
   //api.use('ecmascript');
   api.use('ddp');
   api.use('alanning:roles@1.2.14');
+  api.use('accounts-password');
 
   api.addFiles('trombone.js', 'server');
 
