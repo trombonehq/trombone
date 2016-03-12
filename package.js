@@ -26,6 +26,9 @@ Package.onUse(function(api) {
   api.addFiles('lib/account.js', 'server');
   api.export('setupAccount', 'server');
 
+  api.addFiles('lib/analytics.js', 'server');
+  api.export('setupAnalytics', 'server');
+
   api.addFiles('lib/publications.js', 'server');
   api.export('configurePublications', 'server');
 

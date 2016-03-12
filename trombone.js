@@ -26,22 +26,32 @@ Trombone = {
       return result;
     }
 
-    var connection = DDP.connect(apiURl);
+    setupAccount(appSecret, password, function(error, result) {
+      if(error) {
+        console.log('Trombone Error: ' + error.message);
+      } else {
+        console.log('Trombone: Account configuration successful');
+        configurePublications(result.superUserId, appSecret);
+        addMethods();
+      }
+    });
+
+    _tromboneConnection = DDP.connect(apiURl);
 
     //wait to connect to the API and then authenticate
     function waitForConnection() {
-      if(!connection.status().connected) {
+      if(!_tromboneConnection.status().connected) {
         Meteor.setTimeout(waitForConnection, 100)
       } else {
-        result.connected = connection.status().connected;
+        result.connected = _tromboneConnection.status().connected;
         var absoluteUrl = Meteor.absoluteUrl({secure: true});
 
-        connection.call('authenticateCredentials', appId, appSecret, absoluteUrl, function(error, result) {
+        _tromboneConnection.call('authenticateCredentials', appId, appSecret, absoluteUrl, function(error, result) {
           if(error) {
             console.log('Trombone Error: ' + error.message);
           } else {
-            console.log('Trombone: Connected to Trombone');
-            setupAccount(appSecret, password);
+            setupAnalytics(appId, appSecret);
+            console.log('Trombone: Authenticated with ' + apiURl + ' successfully');
           }
         });
 
