@@ -1,6 +1,6 @@
 Package.describe({
   name: 'trombonehq:trombone',
-  version: '0.0.2',
+  version: '0.0.5',
   // Brief, one-line summary of the package.
   summary: 'Trombone - Hassle free user account management for Meteor',
   // URL to the Git repository containing the source code for this package.
