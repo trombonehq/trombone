@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "airbnb/base",
+    "plugin:meteor/guide"
+  ],
+  "rules": {
+    "no-underscore-dangle": 0
+  }
+}

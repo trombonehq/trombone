@@ -1,7 +1,5 @@
 #[Trombone](https://trombone.io) - Hassle free user management for Meteor
 
-## Note - this is beta software, please use at your own risk.
-
 ### Getting Started
 
 1. Create an account at <https://trombone.io>
@@ -16,6 +14,14 @@ Meteor.startup(function() {
 });
 ```
 
+or if you're using the new <a href="http://docs.meteor.com/#/full/modules">ECMAScript Modules support</a>, place the following in a file that that is loaded during your server startup:
+
+```js
+import Trombone from { meteor/trombonehq:trombone };
+
+Trombone.configure('<AppId>', '<AppSecret>', '<Password>');
+```
+
 Finally, deploy your application.
 
 That's it! You can now manage your user accounts on <https://trombone.io>, you will be prompted for the password you created in step 4 when accessing your app.
@@ -24,5 +30,6 @@ That's it! You can now manage your user accounts on <https://trombone.io>, you w
 ### Points to Note
 
 - This will only work on sites with SSL enabled. If you're doing authentication over non-SSL connections please stop.
-- We currently only support apps that use the [Accounts-Password](https://atmospherejs.com/meteor/accounts-password) package
+- We currently only support apps that use the [Accounts-Password](https://atmospherejs.com/meteor/accounts-password) package. There are plans to remove this requirement soon.
 - Your application must be accessible over the public internet to work. Local apps will still authenticate with the trombone API but the trombone dashboard will not be able to fetch data
+- This is beta software, use at your own risk!
