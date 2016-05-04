@@ -1,6 +1,6 @@
 Package.describe({
   name: 'trombonehq:trombone',
-  version: '0.0.13',
+  version: '0.0.14',
   // Brief, one-line summary of the package.
   summary: 'Trombone - A hassle free user account management admin panel for Meteor',
   // URL to the Git repository containing the source code for this package.
@@ -12,7 +12,7 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('1.2.1');
+  api.versionsFrom('1.3');
   api.use('ecmascript');
   api.use('check');
   api.use('ddp');
