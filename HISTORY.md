@@ -1,3 +1,7 @@
+## 0.0.15
+- Added support for active users tile
+- Small analytics fix
+
 ## 0.0.14
 - Updated to Meteor 1.3 only support
 - Adding sorting users
