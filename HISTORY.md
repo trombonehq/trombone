@@ -1,3 +1,6 @@
+## 0.0.16
+- Added custom method support
+
 ## 0.0.15
 - Added support for active users tile
 - Small analytics fix

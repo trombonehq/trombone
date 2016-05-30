@@ -1,4 +1,4 @@
-#[Trombone](https://trombone.io) - Hassle free user management for Meteor
+# [Trombone](https://trombone.io) - Hassle free user management for Meteor
 
 ### Getting Started
 
@@ -10,7 +10,6 @@
 
 ```js
 import Trombone from { meteor/trombonehq:trombone };
-
 Trombone.configure('<AppId>', '<AppSecret>', '<Password>');
 ```
 
@@ -18,11 +17,34 @@ Finally, deploy your application.
 
 That's it! You can now manage your user accounts on <https://trombone.io>, you will be prompted for the password you created in step 4 when accessing your app.
 
+### Adding custom methods
+
+Trombone provides a custom method API that allows your to add custom methods to your trombone dashboard. These will appear above the user list, and are useful for executing common tasks in your app or over your users.
+
+```js
+Trombone.method(name, options);
+```
+
+- `name` - a string that maps to a method registered with the <a href="http://docs.meteor.com/#/full/meteor_methods">Meteor.methods</a> API
+- `options` - an object as follows:
+
+```js
+{
+    "buttonLabel": String, // the text to show on the button, required
+    "needsUsers": boolean, // defaults to false, set this to true if you need to supply users to your method
+}
+```
+
+If needsUsers is true, the checked users will be supplied to the method as an array of user IDs as the only argument.
+
+Note that you need to ensure your call to Trombone.method() comes after you have registered your method with the Meteor.methods API.
+
+
 
 ### Points to Note
 
-- This will only work on sites with SSL enabled. If you're doing authentication over non-SSL connections please stop.
-- We currently only support apps that use the [Accounts-Password](https://atmospherejs.com/meteor/accounts-password) package. There are plans to remove this requirement soon.
+- Trombone will only work on sites with SSL enabled. If you're doing authentication over non-SSL connections please stop
+- We currently only support apps that use the [Accounts-Password](https://atmospherejs.com/meteor/accounts-password) package. There are plans to remove this requirement soon
 - Your application must be accessible over the public internet to work. Local apps will still authenticate with the trombone API but the trombone dashboard will not be able to fetch data
 - You must be using Meteor 1.3 or above
 - This is beta software, use at your own risk!

@@ -6,6 +6,9 @@ import { setupAccount } from './lib/account.js';
 import { configurePublications } from './lib/publications.js';
 import { addMethods } from './lib/methods.js';
 
+import { setupCustomMethod } from './lib/customMethods.js';
+import { exposeCustomMethods } from './lib/customMethods.js';
+
 export const Trombone = {
   configure(appId, appSecret, password) {
     const apiURl = Meteor.settings.tromboneAPIUrl ? Meteor.settings.tromboneAPIUrl : 'https://trombone.io';
@@ -21,6 +24,7 @@ export const Trombone = {
         console.log('Trombone: Account configuration successful');
         configurePublications(result.superUserId, appSecret);
         addMethods();
+        exposeCustomMethods();
       }
     });
 
@@ -43,5 +47,10 @@ export const Trombone = {
       }
     }
     return waitForConnection();
+  },
+
+  method(name, options = { needsUsers: false }) {
+    check(name, String);
+    setupCustomMethod(name, options);
   },
 };

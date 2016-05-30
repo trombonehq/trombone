@@ -1,8 +1,8 @@
 Package.describe({
   name: 'trombonehq:trombone',
-  version: '0.0.15',
+  version: '0.0.16',
   // Brief, one-line summary of the package.
-  summary: 'Trombone - A hassle free user account management admin panel for Meteor',
+  summary: 'Trombone - A hassle free user account / accounts management admin panel for Meteor',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/trombonehq/trombone.git',
   // By default, Meteor will default to using README.md for documentation.
