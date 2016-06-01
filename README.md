@@ -1,5 +1,9 @@
 # [Trombone](https://trombone.io) - Hassle free user management for Meteor
 
+[ ![Codeship Status for trombonehq/trombone](https://codeship.com/projects/a2e73880-0a40-0134-5508-7e53424ec4a1/status?branch=master)](https://codeship.com/projects/155534) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://opensource.org/licenses/mit-license.php)
+
+![Screenshot](http://i.imgur.com/VXG3aL2.png)
+
 ### Getting Started
 
 1. Create an account at <https://trombone.io>
