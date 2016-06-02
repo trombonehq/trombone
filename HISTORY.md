@@ -1,3 +1,6 @@
+## 0.0.17
+- Readme improvements
+
 ## 0.0.16
 - Added custom method support
 
